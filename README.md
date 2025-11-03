@@ -1,3 +1,4 @@
+
 <p align="center">
   <img src="images/logomodulo.png" alt="Logo Faculdade" width="150"/>
 </p>
@@ -178,6 +179,12 @@ This solution satisfies all the requirements:
 
 ---
 
+## Project documents
+
+- [Star Wars To-do list documents](https://drive.google.com/drive/folders/1VpUav74GKU5Wha67ZINnjuQPUol5b-qN?usp=sharing)
+
+---
+
 # 👨‍💻 Author
 
 ### Developed by [Sabrina dos Santos, Gabriel Victor Cardoso, Jéssica Akemy, Hugo Rocha, Maria Núbia, Thomas] ✨
@@ -191,3 +198,4 @@ May the Force (and the Code) be with You ⚡
 ```bash
 git clone https://github.com/notepad-star-wars/PROJETO_CSM.git
 cd PROJETO_CSM
+```
