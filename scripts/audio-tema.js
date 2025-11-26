@@ -47,7 +47,7 @@
 
         musicaAtual.currentTime = 0;
         musicaAtual.play().catch(err => {
-            console.warn('🎧 Som bloqueado:', err);
+            console.warn('Som bloqueado:', err);
             criarOverlay(); 
         });
     }
@@ -138,7 +138,7 @@
         // Define a classe conforme a página
         if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
             overlay.className = 'overlay-visivel';
-            overlay.textContent = 'Clique na tela para ativar o áudio 🔊';
+            overlay.textContent = 'Clique na tela para ativar o áudio!';
         } else {
             overlay.className = 'overlay-invisivel';
         }

@@ -162,31 +162,31 @@ svg #front{ fill: var(--secondary-color); }
 .author-links:hover{ color: var(--highlighted-color); }
 
 .contact-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 50%;
-  right: 50%;
-  width: 600px;
-  height: 90%;
-  max-height: 600px;
-  transform: translate(50%, -50%);
-  background: var(--primary-color); 
-  backdrop-filter: blur(10px); 
-  border-radius: 10px;
-  border: 2px solid var(--secondary-color);
-  z-index: 100;
-  opacity: 0;
-  visibility: hidden;
-  clip-path: inset(50% 0 50% 0);
-  transition: all .3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    width: 600px;
+    height: 90%;
+    max-height: 600px;
+    transform: translate(50%, -50%);
+    background: var(--primary-color); 
+    backdrop-filter: blur(10px); 
+    border-radius: 10px;
+    border: 2px solid var(--secondary-color);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    clip-path: inset(50% 0 50% 0);
+    transition: all .3s ease-in-out;
 }
 
 .contact-container.form-active {
-  opacity: 1;
-  visibility: visible;
-  clip-path: inset(0 0 0 0);
+    -path: inset(opacity: 1;
+    visibility: visible;
+    clip0 0 0 0);
 }
 
 .contact-form{
@@ -441,4 +441,11 @@ footer p{
     textarea{
         padding: 100px;
     }
+}
+
+.curiosity-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
 }
