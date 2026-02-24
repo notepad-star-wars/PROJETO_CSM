@@ -10,7 +10,7 @@ This project includes **user authentication (login/register)**, secure storage o
 
 ---
 
-## 🚀 Features  
+## Features  
 - User **Registration & Login** (Firebase Authentication)  
 - Create, edit, and delete personal tasks  
 - Tasks stored safely in **Firebase Firestore**  
@@ -29,8 +29,10 @@ This project includes **user authentication (login/register)**, secure storage o
 - **Vanilla JavaScript (ES6)** – DOM manipulation and Firebase integration  
 
 ### Backend / Services  
-- **Firebase Authentication** – login and registration  
-- **Firebase Firestore** – cloud storage for tasks  
+- **Firebase Authentication** – Login and registration  
+- **Firebase Firestore** – Cloud storage for tasks
+- **API SWAPI** - Official API Star Wars  
+- **Email JS API** - Receipt of registration confirmation.
 
 ---
 
