@@ -42,40 +42,74 @@
 
 <body class="min-h-screen">
     <!-- HERO -->
-    <section class="galaxy-bg h-[80vh] flex flex-col items-center justify-center relative" id="hero">
-        <div class="toggle-tema-container">
-        <div id="tema-btn">
-            <img src="images/yoda-icon.png" alt="imagem de tema claro/escuro" id="img-tema">
-        </div>
+    <section class="galaxy-bg h-[80vh] flex flex-col items-center justify-center relative overflow-hidden" id="hero">
+        
+        <!-- VÍDEO DE FUNDO -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" style="z-index: 0;">
+            <source src="videos/fundo-galaxia.mp4" type="video/mp4">
+            <!-- Fallback para navegadores que não suportam vídeo -->
+            <img src="images/galaxy-fallback.jpg" alt="Galaxy Background" class="absolute inset-0 w-full h-full object-cover">
+        </video>
+
+        <!-- OVERLAY ESCURO PARA MELHOR CONTRASTE -->
+        <div class="absolute inset-0 bg-black bg-opacity-60" style="z-index: 1;"></div>
+
+        <!-- BOTÃO DE TEMA (YODA) -->
+        <div class="toggle-tema-container z-20">
+            <div id="tema-btn">
+                <img src="images/yoda-icon.png" alt="imagem de tema claro/escuro" id="img-tema">
+            </div>
         </div>
 
-        <button><i id="pausar-musica" class="fa-solid fa-volume-low"></i></button>
+        <!-- BOTÃO DE MÚSICA -->
+        <button class="z-20" id="pausar-musica">
+            <i class="fa-solid fa-volume-low"></i>
+        </button>
 
-        <div class="text-center z-10 px-4 max-w-4xl py-10 hero">
-        <h1 class="star-wars-font text-5xl md:text-6xl mb-10 depth-effect mt-20" style="color: var(--highlighted-color);">STAR WARS TO-DO LIST</h1>
-        <p class="text-xl md:text-2xl mb-8 depth-effect" style="padding-top: 15px;">Que a força esteja com suas tarefas diárias</p>
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div class="text-center z-20 px-4 max-w-4xl py-10 hero">
+            <h1 class="star-wars-font text-5xl md:text-6xl mb-10 depth-effect mt-20" style="color: var(--highlighted-color);">
+                STAR WARS TO-DO LIST
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-8 depth-effect" style="padding-top: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                Que a força esteja com suas tarefas diárias
+            </p>
 
-        <div class="flex flex-col sm:flex-row sm:w-full justify-center items-center gap-4 w-full">
-            <button id="btnLogin"
-                    class="lightsaber-btn py-3 w-64 rounded-lg depth-effect transition duration-300 text-md flex items-center justify-center hover:scale-105 login-btn"
-                    style="background-color: var(--secondary-color); color: var(--primary-color);">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-            </svg>
-            Acessar a Força
-            </button>
+            <!-- BOTÕES DE AÇÃO -->
+            <div class="flex flex-col sm:flex-row sm:w-full justify-center items-center gap-4 w-full">
+                <button id="btnLogin"
+                        class="lightsaber-btn py-3 w-64 rounded-lg depth-effect transition duration-300 text-md flex items-center justify-center hover:scale-105 login-btn"
+                        style="background-color: var(--secondary-color); color: var(--primary-color); box-shadow: 0 0 15px rgba(255,232,31,0.3);">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    Acessar a Força
+                </button>
 
-            <button id="btnCadastro"
-                    class="lightsaber-btn py-3 w-64 rounded-lg depth-effect transition duration-300 text-md flex items-center justify-center hover:scale-105 login-btn"
-                    style="background-color: var(--highlighted-color); color: var(--secondary-color);">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-            </svg>
-            Juntar-se à Rebelião
-            </button>
+                <button id="btnCadastro"
+                        class="lightsaber-btn py-3 w-64 rounded-lg depth-effect transition duration-300 text-md flex items-center justify-center hover:scale-105 login-btn"
+                        style="background-color: var(--highlighted-color); color: var(--secondary-color); box-shadow: 0 0 15px rgba(255,232,31,0.5);">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                    Juntar-se à Rebelião
+                </button>
+            </div>
+
+            <!-- SETA INDICATIVA (OPCIONAL) -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+                <i class="fa-solid fa-chevron-down text-2xl" style="color: var(--highlighted-color);"></i>
+            </div>
         </div>
-        </div>
+
+        <!-- EFEITO DE ESTRELAS ADICIONAL (CSS) -->
+        <div class="absolute inset-0 pointer-events-none z-5" style="background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 20%), 
+                    radial-gradient(circle at 80% 70%, rgba(255,215,0,0.1) 0%, transparent 30%),
+                    radial-gradient(circle at 40% 80%, rgba(135,206,250,0.1) 0%, transparent 25%);
+                    animation: twinkle 8s ease-in-out infinite;"></div>
     </section>
+
 
     <!-- MODAL LOGIN / CADASTRO -->
     <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[110] p-4 hidden">
@@ -222,7 +256,7 @@
     <footer class="py-8 text-center border-t" style="border-top: 2px solid var(--highlighted-color);">
         <a href="politicas.html" target="_blank" class="footer-links">Políticas de Privacidade</a>
         <p class="py-2 pt-5">Que a força esteja com você!</p>
-        <p>2026 Star Wars To-Do List</p>
+        <p>2025 Star Wars To-Do List</p>
     </footer>
 
     <!-- Scripts -->
