@@ -9,17 +9,14 @@ export class Carrossel {
         this.totalCards = 0;
         this.isTransitioning = false;
         
-        // Elementos do carrossel
         this.prevBtn = document.querySelector('.carousel-prev');
         this.nextBtn = document.querySelector('.carousel-next');
         this.indicatorsContainer = document.querySelector('.carousel-indicators');
         
-        // Bind dos métodos
         this.handleResize = this.handleResize.bind(this);
         this.goToPrev = this.goToPrev.bind(this);
         this.goToNext = this.goToNext.bind(this);
         
-        // Event listeners
         this.init();
     }
     
@@ -37,6 +34,7 @@ export class Carrossel {
     
     getCardsPerView() {
         const width = window.innerWidth;
+        if (width <= 480) return 1;
         if (width <= 640) return 1;
         if (width <= 1024) return 2;
         return 3;
@@ -52,10 +50,8 @@ export class Carrossel {
     }
     
     setCards(cards) {
-        // Limpar track
         this.track.innerHTML = '';
         
-        // Adicionar novos cards
         cards.forEach(card => {
             this.track.appendChild(card);
         });
@@ -151,15 +147,19 @@ export class Carrossel {
     }
     
     updateCarousel() {
-        if (!this.track) return;
+        if (!this.track || this.track.children.length === 0) return;
         
-        const cardWidth = this.track.children[0]?.offsetWidth || 0;
-        const gap = 20; // gap entre cards
+        const firstCard = this.track.children[0];
+        const cardStyle = window.getComputedStyle(firstCard);
+        const cardWidth = firstCard.offsetWidth;
+        const marginLeft = parseFloat(cardStyle.marginLeft) || 0;
+        const marginRight = parseFloat(cardStyle.marginRight) || 0;
+        const gap = 20;
+        
         const translateX = -(this.currentIndex * (cardWidth + gap));
         
         this.track.style.transform = `translateX(${translateX}px)`;
         
-        // Atualizar botões
         if (this.prevBtn) {
             this.prevBtn.disabled = this.currentIndex <= 0;
             this.prevBtn.style.opacity = this.currentIndex <= 0 ? '0.3' : '0.8';
